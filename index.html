@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="/js/scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="todo-container">
+      <header>
+        <h1>To Do List</h1>
+      </header>
+      <form id="todo-form">
+        <p>Adicione a sua tarefa</p>
+        <div class="form-control">
+          <input type="text" id="todo-input" placeholder="Ex.: Comprar leite" />
+          <button type="submit">
+            <i class="fa-solid fa-circle-plus"></i>
+          </button>
+        </div>
+      </form>
+      <form id="edit-form">
+        <p>Edite a sua tarefa</p>
+        <div class="form-control">
+          <input type="text" id="edit-input" />
+          <button type="submit">
+            <i class="fa-solid fa-circle-check"></i>
+          </button>
+        </div>
+        <button id="cancel-edit"></button>
+      </form>
+      <div id="toolbar">
+        <div id="search">
+          <h4>Pesquisar</h4>
+          <form>
+            <input type="text" id="search-input" placeholder="Buscar" />
+            <button id="erase-search">
+              <i class="fa-solid fa-delete-left"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div id="filter">
+        <h4>Filtrar</h4>
+        <select id="filter-select">
+          <option value="all">Todos</option>
+          <option value="done">Feitos</option>
+          <option value="todo">A fazer</option>
+        </select>
+      </div>
+    </div>
+    <div id="todo-list">
+      <div class="todo">
+        <h3>Comprar pão</h3>
+        <button id="finish-todo">
+          <i class="fa-solid fa-circle-check"></i>
+        </button>
+        <button id="edit-todo">
+          <i class="fa-solid fa-file-pen"></i>
+        </button>
+        <button id="remove-todo">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+      <div class="todo">
+        <h3>Comprar batata</h3>
+        <button id="finish-todo">
+          <i class="fa-solid fa-circle-check"></i>
+        </button>
+        <button id="edit-todo">
+          <i class="fa-solid fa-file-pen"></i>
+        </button>
+        <button id="remove-todo">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+      <div class="todo">
+        <h3>Comprar tomates</h3>
+        <button id="finish-todo">
+          <i class="fa-solid fa-circle-check"></i>
+        </button>
+        <button id="edit-todo">
+          <i class="fa-solid fa-file-pen"></i>
+        </button>
+        <button id="remove-todo">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
