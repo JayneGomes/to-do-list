@@ -11,7 +11,7 @@ const filterBtn = document.querySelector("#filter-select");
 
 let oldInput;
 
-const maxCharacters = 30;
+const maxCharacters = 100;
 
 // // Functions
 const saveToDos = (text) => {
@@ -27,20 +27,25 @@ const saveToDos = (text) => {
   todoTitle.innerHTML = displayText;
   todo.appendChild(todoTitle);
 
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("buttons");
+
   const doneBtn = document.createElement("button");
-  doneBtn.classList.add("finish-todo");
+  doneBtn.classList.add("finish-todo", "buttons");
   doneBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-  todo.appendChild(doneBtn);
+  buttonContainer.appendChild(doneBtn);
 
   const editBtn = document.createElement("button");
-  editBtn.classList.add("edit-todo");
+  editBtn.classList.add("edit-todo", "buttons");
   editBtn.innerHTML = '<i class="fa-solid fa-file-pen"></i>';
-  todo.appendChild(editBtn);
+  buttonContainer.appendChild(editBtn);
 
   const deleteBtm = document.createElement("button");
-  deleteBtm.classList.add("remove-todo");
+  deleteBtm.classList.add("remove-todo", "buttons");
   deleteBtm.innerHTML = '<i class="fa-solid fa-delete-left"></i>';
-  todo.appendChild(deleteBtm);
+  buttonContainer.appendChild(deleteBtm);
+
+  todo.appendChild(buttonContainer);
 
   todoList.appendChild(todo);
   todoInput.value = "";
@@ -99,9 +104,9 @@ const filterTodos = (filterValue) => {
       });
       break;
 
-    case "todo":
+    case "undone":
       todos.forEach((todo) => {
-        if (todo.classList.contains("todo")) {
+        if (todo.classList.contains("done")) {
           todo.classList.add("hide");
         } else {
           todo.classList.remove("hide");
@@ -125,15 +130,13 @@ cancelEdit.addEventListener("click", (e) => {
   toggleForms();
 });
 
-document.addEventListener("click", (e) => {
+todoList.addEventListener("click", (e) => {
   const targetElement = e.target;
-  const parentElement = targetElement.closest("div");
+  const parentElement = targetElement.closest(".todo");
 
-  let todoTitle;
+  if (!parentElement) return;
 
-  if (parentElement && parentElement.querySelector("h3")) {
-    todoTitle = parentElement.querySelector("h3").innerText;
-  }
+  const todoTitle = parentElement.querySelector("h3").innerText;
 
   if (targetElement.classList.contains("finish-todo")) {
     parentElement.classList.toggle("done");
@@ -145,9 +148,7 @@ document.addEventListener("click", (e) => {
 
   if (targetElement.classList.contains("edit-todo")) {
     toggleForms();
-
     editInput.value = todoTitle;
-    oldInput = todoTitle;
     parentElement.classList.add("editing");
   }
 });
@@ -167,7 +168,6 @@ editForm.addEventListener("submit", (e) => {
 
 searchInput.addEventListener("keyup", (e) => {
   const search = e.target.value;
-
   getSearch(search);
 });
 
@@ -179,6 +179,5 @@ eraseBtn.addEventListener("click", (e) => {
 
 filterBtn.addEventListener("change", (e) => {
   const filterValue = e.target.value;
-
   filterTodos(filterValue);
 });
