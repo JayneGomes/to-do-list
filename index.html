@@ -28,7 +28,7 @@
           </button>
         </div>
       </form>
-      <form id="edit-form">
+      <form id="edit-form" class="hide">
         <p>Edite a sua tarefa</p>
         <div class="form-control">
           <input type="text" id="edit-input" />
@@ -36,7 +36,7 @@
             <i class="fa-solid fa-circle-check"></i>
           </button>
         </div>
-        <button id="cancel-edit"></button>
+        <button id="cancel-edit">Cancelar</button>
       </form>
       <div id="toolbar">
         <div id="search">
@@ -48,52 +48,52 @@
             </button>
           </form>
         </div>
+        <div id="filter">
+          <h4>Filtrar</h4>
+          <select id="filter-select">
+            <option value="all">Todos</option>
+            <option value="done">Feitos</option>
+            <option value="todo">A fazer</option>
+          </select>
+        </div>
       </div>
-      <div id="filter">
-        <h4>Filtrar</h4>
-        <select id="filter-select">
-          <option value="all">Todos</option>
-          <option value="done">Feitos</option>
-          <option value="todo">A fazer</option>
-        </select>
-      </div>
-    </div>
-    <div id="todo-list">
-      <div class="todo">
-        <h3>Comprar pão</h3>
-        <button id="finish-todo">
-          <i class="fa-solid fa-circle-check"></i>
-        </button>
-        <button id="edit-todo">
-          <i class="fa-solid fa-file-pen"></i>
-        </button>
-        <button id="remove-todo">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </div>
-      <div class="todo">
-        <h3>Comprar batata</h3>
-        <button id="finish-todo">
-          <i class="fa-solid fa-circle-check"></i>
-        </button>
-        <button id="edit-todo">
-          <i class="fa-solid fa-file-pen"></i>
-        </button>
-        <button id="remove-todo">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </div>
-      <div class="todo">
-        <h3>Comprar tomates</h3>
-        <button id="finish-todo">
-          <i class="fa-solid fa-circle-check"></i>
-        </button>
-        <button id="edit-todo">
-          <i class="fa-solid fa-file-pen"></i>
-        </button>
-        <button id="remove-todo">
-          <i class="fa-solid fa-trash"></i>
-        </button>
+      <div id="todo-list">
+        <div class="todo">
+          <h3>Comprar pão</h3>
+          <button id="finish-todo">
+            <i class="fa-solid fa-circle-check"></i>
+          </button>
+          <button id="edit-todo">
+            <i class="fa-solid fa-file-pen"></i>
+          </button>
+          <button id="remove-todo">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+        <div class="todo">
+          <h3>Comprar batata</h3>
+          <button id="finish-todo">
+            <i class="fa-solid fa-circle-check"></i>
+          </button>
+          <button id="edit-todo">
+            <i class="fa-solid fa-file-pen"></i>
+          </button>
+          <button id="remove-todo">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+        <div class="todo done">
+          <h3>Comprar tomates</h3>
+          <button id="finish-todo">
+            <i class="fa-solid fa-circle-check"></i>
+          </button>
+          <button id="edit-todo">
+            <i class="fa-solid fa-file-pen"></i>
+          </button>
+          <button id="remove-todo">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
       </div>
     </div>
   </body>

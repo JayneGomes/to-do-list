@@ -1,0 +1,273 @@
+/* All */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+body {
+  background-image: url("../img/bg2.jpg");
+  background-size: cover;
+  background-position: 0 25%;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+button i {
+  color: rgb(94, 2, 170);
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+button:hover i {
+  color: #7c5efc;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+#cancel-edit {
+  background-color: rgb(94, 2, 170);
+  color: white;
+  border-radius: 8px;
+}
+
+#cancel-edit:hover {
+  background-color: #7c5efc;
+}
+
+input,
+select {
+  padding: 0.25rem 0.5rem;
+}
+
+.hide {
+  display: none;
+}
+
+/* To-do container */
+.todo-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: rgb(255, 232, 237);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+}
+
+.todo-container header {
+  padding: 0 1rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(94, 2, 170, 0.15);
+}
+
+/* To-do form */
+#todo-form,
+#edit-form {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(94, 2, 170, 0.15);
+}
+
+#todo-form p,
+#edit-form p {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+#todo-form input,
+#edit-form input, #toolbar input {
+  border-radius: 8px;
+  border: 1px solid rgba(120, 39, 187, 0.51)
+  background-color:rgba(255, 255, 255, 0.57);
+  font-weight: 300;
+}
+
+.form-control {
+  display: flex;
+}
+
+#cancel-edit {
+  margin-top: .5rem;
+}
+
+/* Toolbar */
+#toolbar {
+  display: flex;
+  border-bottom: 1px solid rgba(94, 2, 170, 0.15);
+  padding: 1rem;
+}
+
+#toolbar h4 {
+  margin-bottom: .5rem;
+}
+
+#search {
+  border-right: 1px solid rgba(94, 2, 170, 0.15);
+  padding-right: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+}
+
+#search form{
+  display: flex;
+}
+
+#search input {
+ width: 100%;
+}
+
+#filter {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+
+}
+
+#filter select {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid rgba(120, 39, 187, 0.51)
+  background-color:rgba(255, 255, 255, 0.57);
+  font-weight: 400;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* To-do List */
+.todo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(94, 2, 170, 0.15);
+  transition: 0.4s;
+}
+
+.todo h3{
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.todo button {
+  margin-left: 0.4rem;
+}
+
+.todo button i {
+  font-size: 1.2rem;
+}
+
+.todo:hover {
+  background-color: rgba(120, 39, 187, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.done {
+  background-color: rgba(115, 54, 165, 0.51);
+  border-radius: 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.done:hover {
+  background-color: rgba(115, 54, 165, 0.67);
+}
+
+.done h3 {
+  text-decoration: line-through;
+  FONT-StyLE: italic;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    background-position: center;
+  }
+
+  .todo-container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-control {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .form-control input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .form-control button {
+    white-space: nowrap;
+    padding: 0.5rem 0.8rem;
+  }
+
+  #todo-form, 
+  #edit-form {
+    padding: 0.8rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  #toolbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #search {
+    width: 100%;
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  #search form {
+    gap: 0.5rem;
+  }
+
+  #filter {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  #filter select {
+    width: 100%;
+  }
+}
