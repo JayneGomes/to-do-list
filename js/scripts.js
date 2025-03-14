@@ -223,7 +223,7 @@ const loadToDosLocalStorage = () => {
   const todos = getToDosLocalStorage();
 
   todos.forEach((todo) => {
-    saveToDos(todo.text, todo.done, 0);
+    saveToDos(todo.text, todo.done, 0, todo.id);
   });
 };
 
